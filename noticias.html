@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090c0b">
+  <meta name="description" content="Notícias, atualizações e patch notes de Wardogs no QG Wardogs Brasil.">
+  <title>Notícias e Patch Notes | QG Wardogs Brasil</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#f2f5ec;--muted:#a7afa4;--acid:#c7ff35;--orange:#ff6a2b;--panel:#121714;--line:#293129;--bg:#090c0b}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,sans-serif;line-height:1.6}a{color:inherit;text-decoration:none}.shell{width:min(1160px,calc(100% - 40px));margin:auto}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.25;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,#000,transparent 80%)}
+    nav{height:82px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);position:relative;z-index:2}.brand{display:flex;align-items:center;gap:12px;font:800 1.25rem/1 'Barlow Condensed';letter-spacing:.08em}.brand img{width:52px;height:52px;object-fit:contain}.nav-links{display:flex;align-items:center;gap:28px;color:var(--muted);font-size:.92rem}.nav-links a:hover,.active{color:var(--ink)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border:1px solid var(--acid);background:var(--acid);color:#0a0d0b;font-weight:800;text-transform:uppercase;letter-spacing:.05em}.page-head{padding:92px 0 54px;border-bottom:1px solid var(--line)}.eyebrow{color:var(--acid);font-size:.8rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase}h1,h2,h3{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;line-height:.95;margin:0}h1{font-size:clamp(4rem,8vw,7rem);margin:20px 0}.lead{max-width:680px;color:var(--muted);font-size:1.05rem;margin:0}
+    main{padding:58px 0 100px}.section-title{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:24px}.section-title h2{font-size:2.8rem}.section-title span{color:var(--muted);font-size:.88rem}.grid{display:grid;grid-template-columns:1.25fr .75fr;gap:16px}.feature,.side-card,.patch{border:1px solid var(--line);background:var(--panel);position:relative}.feature{padding:38px;min-height:320px;background:linear-gradient(140deg,rgba(199,255,53,.11),transparent 55%),var(--panel);display:flex;flex-direction:column;justify-content:flex-end}.tag{display:inline-flex;align-self:flex-start;border:1px solid var(--acid);color:var(--acid);padding:5px 9px;font-size:.72rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}.feature h2{font-size:clamp(2.8rem,5vw,4.6rem);margin:20px 0 12px}.feature p,.side-card p,.patch p{color:var(--muted);margin:0}.side{display:grid;gap:16px}.side-card{padding:28px;min-height:152px}.side-card h3{font-size:1.65rem;margin:14px 0 8px}.patches{margin-top:72px}.patch-list{display:grid;gap:12px}.patch{display:grid;grid-template-columns:150px 1fr auto;align-items:center;gap:25px;padding:24px 28px}.version{font:800 1.35rem 'Barlow Condensed';color:var(--acid)}.patch h3{font-size:1.45rem;margin-bottom:5px}.status{color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:.1em}.empty{margin-top:36px;border:1px dashed #435045;padding:24px;color:var(--muted);text-align:center}
+    .read-more{display:inline-flex;margin-top:22px;color:var(--acid);font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.patch-detail{margin-top:76px;border:1px solid var(--line);background:#0d120f;padding:clamp(28px,5vw,58px);scroll-margin-top:24px}.patch-detail h2{font-size:clamp(2.8rem,6vw,5rem);margin:18px 0 20px}.patch-detail h3{font-size:1.8rem;margin:44px 0 14px;color:var(--ink)}.patch-detail p,.patch-detail li{color:#c3cac0}.patch-detail ul{padding-left:22px}.patch-detail li{margin:10px 0}.patch-detail strong{color:var(--ink)}.maintenance{border-left:4px solid var(--orange);background:rgba(255,106,43,.08);padding:22px 24px;margin:30px 0}.maintenance h3{margin:0 0 10px;color:var(--orange)}.maintenance p{margin:0}.article-intro{font-size:1.04rem;max-width:900px}.notice{border:1px solid #73572a;background:rgba(255,170,40,.07);padding:20px 22px;margin:28px 0;color:#f1c06f}.back-top{display:inline-flex;margin-top:35px;color:var(--acid);font-weight:800;text-transform:uppercase;font-size:.78rem;letter-spacing:.08em}
+    footer{border-top:1px solid var(--line);padding:34px 0;color:var(--muted);font-size:.85rem}.footer-inner{display:flex;justify-content:space-between;gap:20px}.accent{color:var(--acid);font-weight:700}
+    @media(max-width:800px){.nav-links a:not(.btn){display:none}.page-head{padding-top:65px}.grid{grid-template-columns:1fr}.patch{grid-template-columns:1fr;gap:8px}.status{justify-self:start}.footer-inner{flex-direction:column}.shell{width:min(100% - 24px,1160px)}}
+  </style>
+</head>
+<body>
+  <header class="shell"><nav aria-label="Navegação principal"><a class="brand" href="index.html"><img src="logo_sf.png" alt=""><span>QG Wardogs Brasil</span></a><div class="nav-links"><a href="index.html#comunidade">Comunidade</a><a class="active" href="noticias.html">Notícias</a><a href="index.html#vip">Pacote VIP</a><a class="btn" href="index.html#entrar">Entrar no QG</a></div></nav></header>
+  <section class="page-head" id="topo"><div class="shell"><div class="eyebrow">Central de informações</div><h1>Notícias &amp;<br>Patch Notes</h1><p class="lead">Atualizações do game, mudanças importantes e comunicados dos servidores oficiais reunidos em um só lugar.</p></div></section>
+  <main class="shell">
+    <div class="section-title"><h2>Em destaque</h2><span>Última atualização</span></div>
+    <div class="grid">
+      <article class="feature"><span class="tag">Patch 0.1.2</span><h2>Atualização<br>0.1.2</h2><p>Correções de exploits de dinheiro e XP, solução para o erro WD-L020 no Windows 11 e melhorias no navegador de servidores.</p><a class="read-more" href="#patch-012">Ler patch notes completo</a></article>
+      <div class="side"><article class="side-card"><span class="tag">Servidor</span><h3>Comunicados do QG</h3><p>Avisos de eventos, manutenção e novidades do servidor brasileiro.</p></article><article class="side-card"><span class="tag">Guias</span><h3>Dicas da comunidade</h3><p>Estratégias e informações úteis preparadas para os jogadores.</p></article></div>
+    </div>
+    <section class="patches"><div class="section-title"><h2>Patch Notes</h2><span>Histórico de atualizações</span></div><div class="patch-list"><a class="patch" href="#patch-012"><div class="version">VERSÃO 0.1.2</div><div><h3>Atualização menor</h3><p>Segurança, correções de exploits, estabilidade e melhorias de interface.</p></div><div class="status">Ler atualização</div></a></div></section>
+    <article class="patch-detail" id="patch-012">
+      <span class="tag">Atualização menor</span>
+      <h2>WARDOGS | Atualização 0.1.2</h2>
+      <div class="maintenance"><h3>📢 Aviso: período de manutenção</h3><p>WARDOGS entrará em manutenção hoje às <strong>8:00 UTC (05:00 BRT — horário de Brasília)</strong>, com duração estimada de 1 hora. Os serviços ficarão offline durante a implantação da atualização 0.1.2.</p></div>
+      <h3>Notas da Atualização 0.1.2</h3>
+      <p class="article-intro">Esta pequena atualização busca impedir alguns dos exploits recentes de XP e dinheiro e corrigir problemas de segurança observados desde o lançamento em acesso antecipado, incluindo uma correção para o erro de travamento WD-L020 no Windows.</p>
+      <p class="article-intro">A atualização também traz pequenas mudanças na interface para direcionar mais jogadores ao Modo Infantaria e aos servidores de nível baixo, além de outras melhorias de qualidade de vida.</p>
+
+      <h3>Principais novidades da versão 0.1.2</h3>
+      <ul><li><strong>Windows 11:</strong> correção do erro de travamento WD-L020.</li><li><strong>Correções de bugs e exploits:</strong> exploits graves de dinheiro e XP foram corrigidos, juntamente com diversos bugs de jogabilidade que prejudicavam a integridade do jogo justo.</li><li><strong>Navegador de servidores:</strong> novo fluxo de interface “Jogar”, criado para destacar melhor os servidores comunitários com “Modo Infantaria” e “Nível Baixo”.</li></ul>
+
+      <h3>Correção do erro de travamento WD-L020</h3>
+      <ul><li>Corrigido o problema causado pela atualização mais recente do Windows 11, KB5124010, responsável pelos travamentos recentes WD-L020.</li></ul>
+
+      <h3>Exploits de dinheiro e ganho de XP corrigidos</h3>
+      <ul><li>As verificações de validade da ação de reanimação agora são totalmente controladas pelo servidor, reduzindo a possibilidade de abuso em todo o mapa.</li><li>Corrigido o exploit de atravessar objetos voando com veículos; as recompensas agora possuem um limite.</li><li>As recompensas por destruir construções agora variam conforme o progresso da construção. Destruir um projeto recém-posicionado não concede mais a recompensa completa.</li><li>Depositar paletes em uma FOB fora da zona agora concede recompensas reduzidas.</li></ul>
+      <div class="notice"><em>Para deixar claro: quem foi flagrado abusando de exploits de dinheiro e XP — ou, ainda pior, praticando comércio com dinheiro real — teve o dinheiro e a progressão redefinidos e corre o risco de ser banido permanentemente. Esperávamos que a Temporada 01 tivesse vários exploits ainda não descobertos e, até agora, fomos mais tolerantes com infratores de primeira viagem. Essa tolerância acabou.</em><br><br><em>Temos tolerância zero com abusos da economia. Jogadores flagrados explorando repetidamente falhas não intencionais agora correm o risco de receber banimento permanente sem aviso.</em></div>
+
+      <h3>Navegador de servidores e pequenas melhorias de interface</h3>
+      <ul><li>Novo fluxo de interface “JOGAR”. Selecione Jogar e escolha entre servidores <strong>Oficiais</strong>, <strong>Comunitários</strong>, <strong>Modo Infantaria</strong> ou <strong>Nível Baixo</strong>. Este é o primeiro passo para direcionar melhor os jogadores aos servidores que utilizam esses modificadores.</li><li>Os filtros avançados foram adicionados novamente à lista de servidores oficiais.</li><li>Nomes longos de servidores não são mais cortados. Passe o cursor sobre uma entrada para visualizar o nome completo.</li><li>Depois de selecionar Entrar, você verá que está se conectando e, caso exista uma fila, sua posição nela.</li><li>O modo Anônimo agora oculta o nome do servidor na tela de carregamento, assim como o modo Streamer. O nome também permanece oculto no menu de pausa, a menos que você escolha exibi-lo.</li><li>A seleção de região agora mostra quantas regiões foram escolhidas.</li><li>Controles agora são compatíveis com a tela de seleção “JOGAR”.</li></ul>
+
+      <h3>Servidores comunitários — para administradores</h3>
+      <ul><li><strong>Reinicializações programadas:</strong> agora é possível definir um horário diário de reinicialização em UTC.</li><li><strong>RCON AllowedHosts:</strong> agora é possível restringir quem pode acessar o RCON.</li><li>O tamanho das mensagens e transmissões do RCON agora é limitado.</li><li>O RCON agora usa, por padrão, o nível de detalhe de resposta Padrão em vez de Completo, e as respostas de configuração não expõem mais informações internas do servidor.</li><li>O ServerImageURL agora é verificado durante o carregamento da configuração.</li></ul>
+
+      <h3>Melhorias de estabilidade dos servidores</h3>
+      <ul><li>Diversas correções rápidas de estabilidade dos servidores.</li><li>Segurança dos servidores aprimorada para impedir explorações.</li></ul>
+
+      <h3>Correções de bugs</h3>
+      <ul><li>Itens arremessáveis — granadas, fumaça e C4 — não podem mais ser utilizados em assentos fechados de veículos.</li><li>A mira adaptativa agora é ocultada corretamente ao mirar pela mira da arma.</li><li>Corrigidos os pontos críticos de construções que reapareciam no mesmo local recém-atingido, eram empurrados para os cantos ou surgiam no lado oposto da estrutura. Agora eles priorizam locais alcançáveis a partir da posição do jogador.</li><li>Corrigido um bug do Havoc que fazia com que ele recebesse dano aumentado de disparos de canhões de 20 mm e 30 mm.</li><li>Traduções de localização aprimoradas.</li></ul>
+
+      <h3>Olhando para a Temporada 02</h3>
+      <p>Para quem espera atualizações mais significativas, a Temporada 02 está planejada como uma grande atualização de conteúdo, com novas condições de mapa, equipamentos, reformulações de balanceamento e recursos adicionais.</p><p>Mais informações sobre a Temporada 02 serão divulgadas na próxima semana.</p>
+      <a class="back-top" href="#topo">Voltar ao início</a>
+    </article>
+  </main>
+  <footer><div class="shell footer-inner"><div><span class="accent">QG🐺</span> QG Wardogs Brasil</div><div>Servidor Brasileiro</div><div>© <span id="year"></span></div></div></footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
