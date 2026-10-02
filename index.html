@@ -26,6 +26,8 @@
     footer{border-top:1px solid var(--line);padding:34px 0 44px;color:var(--muted);font-size:.85rem}.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}.tag{color:var(--acid);font-weight:700}
     .toast{position:fixed;left:50%;bottom:25px;transform:translate(-50%,120px);background:var(--ink);color:#111;padding:13px 18px;font-weight:700;z-index:10;transition:.3s}.toast.show{transform:translate(-50%,0)}
     @media(max-width:800px){.nav-links a:not(.btn){display:none}.hero{grid-template-columns:1fr;min-height:auto;padding:80px 0}.tactical{width:min(100%,430px);margin:auto}.section-head,.join-box,.vip-shell{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.strip-inner{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line)}.join-box{padding:38px 26px}.vip-summary{border-right:0;border-bottom:1px solid var(--line)}.vip-summary,.checkout{padding:38px 26px}.footer-inner{align-items:flex-start;flex-direction:column}section{padding:80px 0}}@media(max-width:560px){.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.payment-row{grid-template-columns:1fr}.shell{width:min(100% - 24px,1160px)}.brand span:last-child{display:none}h1{font-size:4rem}.actions .btn{width:100%}.hero{gap:45px}.wolf{font-size:5rem}}
+
+.latest-news{padding:0 0 64px;position:relative}.latest-news-box{max-width:920px;margin:0 auto;padding:38px 48px;text-align:center;border:1px solid #3d4c33;border-top:3px solid var(--acid);background:linear-gradient(135deg,rgba(199,255,53,.075),transparent 65%),var(--panel)}.latest-news-meta{display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:.875rem}.latest-news-label{color:var(--acid);font-weight:800;letter-spacing:.12em;text-transform:uppercase}.latest-news h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.05;margin:20px 0 16px}.latest-news p{font-size:1rem;color:var(--muted);max-width:700px;margin:0 auto 25px}.latest-news .btn{min-height:48px;font-size:.875rem}.latest-news a:focus-visible{outline:3px solid var(--ink);outline-offset:5px}@media(max-width:800px){.latest-news{padding:0 0 40px}.latest-news-box{padding:28px 22px}}
   </style>
 </head>
 <body>
@@ -44,6 +46,14 @@
         <div class="actions"><a class="btn" href="#entrar">Entrar no Discord <span aria-hidden="true">↗</span></a><a class="btn ghost" href="#comunidade">Conhecer o QG</a></div>
       </div>
       <div class="hero-logo-wrap"><img class="hero-logo" src="logo_sf.png" alt="Logotipo QG Wardogs Brasil"></div>
+    </section>
+    <section class="latest-news shell" aria-labelledby="latest-news-title">
+      <article class="latest-news-box">
+        <div class="latest-news-meta"><span class="latest-news-label">Última notícia / atualização</span><span id="latest-news-date">02 de outubro de 2026</span></div>
+        <h2 id="latest-news-title">Hotfix de 2 de outubro: segurança e estabilidade</h2>
+        <p id="latest-news-summary">A BULKHEAD anunciou uma correção rápida para problemas de segurança e estabilidade que afetam alguns jogadores de WARDOGS.</p>
+        <a class="btn" id="latest-news-link" href="noticias.html#hotfix-02-outubro">Ler notícia completa</a>
+      </article>
     </section>
     <div class="strip"><div class="shell strip-inner"><div class="stat"><b>Servidor Brasileiro</b><span>Comunidade brasileira de Wardogs</span></div><div class="stat"><b>Esquadrões organizados</b><span>Canais para encontrar e reunir jogadores</span></div><div class="stat"><b>Ambiente respeitoso</b><span>Regras claras e moderação ativa</span></div></div></div>
     <section class="shell" id="comunidade">
@@ -85,5 +95,8 @@
   </main>
   <footer><div class="shell footer-inner"><div><span class="tag">QG🐺</span> QG Wardogs Brasil</div><div>Comunidade independente feita por jogadores.</div><div>© <span id="year"></span></div></div></footer>
   <script>document.getElementById('year').textContent=new Date().getFullYear();const vf=document.getElementById('vipForm'),fm=document.getElementById('formMessage');vf.addEventListener('submit',e=>{e.preventDefault();fm.textContent='';if(!vf.checkValidity()){vf.reportValidity();fm.textContent='Confira os campos obrigatórios antes de continuar.';return}fm.textContent='Dados válidos. A compra será liberada assim que o preço e o Mercado Pago forem ativados.'});</script>
+<script>
+(async()=>{try{const response=await fetch('noticias.html');if(!response.ok)return;const doc=new DOMParser().parseFromString(await response.text(),'text/html');const article=doc.querySelector('article.patch-detail[id]');if(!article)return;const title=article.querySelector('h2');const summary=article.querySelector('.article-intro');const tag=article.querySelector('.tag');if(title&&summary){document.getElementById('latest-news-title').textContent=title.textContent;document.getElementById('latest-news-summary').textContent=summary.textContent;document.getElementById('latest-news-date').textContent=tag?tag.textContent:'';document.getElementById('latest-news-link').href='noticias.html#'+encodeURIComponent(article.id)}}catch{}})();
+</script>
 </body>
 </html>
